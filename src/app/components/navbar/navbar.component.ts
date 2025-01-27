@@ -32,11 +32,9 @@ export class NavbarComponent implements OnInit{
 
     this.userService.getRoleObservable().subscribe(role => {
       this.soyAdmin = role === 'admin';
-      console.log('este es role', role)
     });
     this.userService.getTokenObservable().subscribe(token => {
       token? this.hayToken = true: this.hayToken = false;
-      console.log('este es token', token)
     });
 
     this.checkScreenSize();

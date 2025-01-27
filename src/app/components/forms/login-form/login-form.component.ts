@@ -36,7 +36,7 @@ export class LoginFormComponent {
       next: (res: any) => {
         this.userService.setTokenSetRole(res.token, res.role),
         this.router.navigate(['/films']);
-        console.log(res)},
+        },
         
       error: (err) => console.log(err),
     });

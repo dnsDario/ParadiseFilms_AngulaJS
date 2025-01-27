@@ -1,0 +1,21 @@
+app-navbar {
+    display: block;
+    position: fixed;
+    top: -0.1%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: 0px;
+}
+router-outlet{
+    height: 100%;
+}
+app-footer {
+    position: fixed;
+    bottom: -0.1%;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    mask-image: linear-gradient(to top, black 90%, transparent);
+}

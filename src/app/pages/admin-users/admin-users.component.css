@@ -1,0 +1,53 @@
+.divAdmin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding-top:20px;
+    width: 100%;
+    height: calc(100vh - 160px);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.divAdmin_imgAdmin{
+    height: 18vh;
+    border-radius: 50%;
+    margin-top: 100px;
+}
+
+.divAdmin h1{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    font-size: clamp(24px, 3vw, 42px);
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+    color: aquamarine;
+}
+.divAdmin h2{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    font-size: clamp(18px, 3vw, 28px);
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+    color: aquamarine;
+}
+
+.divAdmin_components{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+}
+
+.divAdmin_components_borrarUsers{
+    width: 100%;
+}
+
+.divAdmin_components_listaBuscadorUsers{
+    width: 100%;
+}
+
+

@@ -1,0 +1,78 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    min-width: 300px;
+    width: 50%;
+    max-width: 450px;
+    padding: 20px;
+    border: 3px aquamarine solid;
+    border-radius: 5px;
+    background-color:black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.form_title{
+    display: flex;
+    margin: 20px auto;
+    color: aquamarine;
+    font-size: clamp(20px, 3vw, 30px);
+}
+.form_fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    border: none;
+    margin: 10px 0;
+}
+.form_fieldset_input_verPWD{
+    display: flex;
+    flex-direction: row;
+}
+.form_fieldset_input {
+    display: flex;
+    width: 82%;
+    height: 25px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    font-size: 16px;
+    border-radius: 2px;
+    background-color: antiquewhite;
+}
+label{
+    font-size: 18px;
+    font-weight: 700;
+    color:white;
+    margin-bottom: 5px;
+    color: aquamarine;
+}
+
+.form_fieldset_button_verPwd {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    width: 20px;
+    transform: translate(-30px, -3px);
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+.form_fieldset_button_verPwd:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
+.form_button_submit {
+    width: 150px;
+    height: 25px;
+    margin: 15px auto;
+    border: 2px aquamarine solid;
+    border-radius: 2px;
+    font-weight: 600;
+    background-color: rgb(32, 32, 32);
+    color: aquamarine;
+}
+.form_button_submit:hover{
+    cursor: pointer;
+    scale: 1.05;
+}

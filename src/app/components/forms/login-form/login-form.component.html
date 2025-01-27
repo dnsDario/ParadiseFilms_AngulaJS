@@ -1,0 +1,15 @@
+<form class="form" [formGroup] = "loginForm" (ngSubmit)="doLogin()">
+    <h2 class="form_title">Acceda a su cuenta de usuario:</h2>
+    <fieldset class="form_fieldset">
+        <label for="email">Email:</label>
+        <input class="form_fieldset_input" formControlName="email" type="email" placeholder="Email">
+    </fieldset>
+    <fieldset class="form_fieldset">
+        <label for="password">Contraseña:</label>
+        <div class="form_fieldset_input_verPWD">
+            <input class="form_fieldset_input" formControlName="password" [type]="hidePassword? 'password':'text'"/> <button class="form_fieldset_button_verPwd" type="button" (click)="hidePassword=!hidePassword" placeholder="Password">👁️</button>
+        </div>
+        
+    </fieldset>
+    <button class="form_button_submit" type="submit">Entrar</button>
+</form>

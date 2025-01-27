@@ -1,0 +1,61 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+.titleInputAndButtonFilms{
+    display: flex;
+    flex-flow: column wrap;
+    width: 93%;
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2.5px solid aquamarine;
+    border-radius: 5px;
+}
+.inputAndButtonFilms{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: none;
+    align-items: center;
+}
+.titleInputAndButtonFilms label{
+  color: aquamarine;
+  margin: 10px 20px;
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 600;
+}
+.inputAndButtonFilms input{
+  width: 60%;
+  height: 30px;
+  margin: 10px 20px;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+}
+.inputAndButtonFilms button{
+  width: 30%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 47, 47, 0.527);
+  color: yellow;
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 700;
+}
+.inputAndButtonFilms button:hover{
+  cursor: pointer;
+  scale:1.1;
+}
+@media screen and (width > 766px) {
+  .titleInputAndButtonFilms{
+    width: 70%;
+  }
+}
+@media screen and (width > 1223px) {
+  .titleInputAndButtonFilms{
+    width: 91.5%;
+  }
+}

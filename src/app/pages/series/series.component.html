@@ -1,0 +1,25 @@
+<div class="contendor">
+    <router-outlet/>
+    <div class="buscador_films">
+        <form class="contenedor_form" [formGroup]="searcherSerie" (ngSubmit)="searchSerie()">
+            <fieldset class="contenedor_form_inputAndButtonFilms">
+                <input type="text" formControlName="serie" placeholder="Buscar serie" />
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </fieldset>
+        </form>
+    </div>
+    <ul class="contenedor_films">
+        @if(series.length > 0){
+            @for(serie of (seriesFiltered.length > 0? seriesFiltered : series); track serie._id){
+                <a [routerLink]="'/series/'+serie._id" (click)="scrollToTop()">
+                    <li class="contenedor_films_film">
+                        <img class="contenedor_films_film_img" src="{{serie.img}}" alt="img{{serie._id}}">
+                        <h4 class="contenedor_films_film_img_h4"> {{serie.title}} </h4>
+                        <h4 class="contenedor_films_film_img_h4"> {{serie.year}} </h4>
+                    </li>
+                </a>                
+            }
+        } @else {}
+        
+    </ul>
+</div>

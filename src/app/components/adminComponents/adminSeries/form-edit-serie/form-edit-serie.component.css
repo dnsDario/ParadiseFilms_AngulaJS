@@ -49,12 +49,14 @@ label{
 .form_button_submit {
     width: 150px;
     height: 30px;
-    border-radius: 5px;
+    border: solid 0px;
+    border-radius: 3px;
     background-color: rgba(172, 255, 47, 0.527);
     color: yellow;
     font-size: clamp(12px, 2vw, 16px);
-    font-weight: 500;
-    margin: 10px 0;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 5px 10px;
 }
 .form_button_submit:hover{
     cursor: pointer;

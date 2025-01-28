@@ -97,11 +97,14 @@ i{
     .nav{
         height: 90px;
     }
+    .nav_marca {
+        width: 25%;
+    }
     .nav_marca img{
-        height: 24px;
+        height: 22px;
     }
     .nav_ul_admin_li a{
-        font-size: 16px;
+        font-size: 14px;
     }
 
 

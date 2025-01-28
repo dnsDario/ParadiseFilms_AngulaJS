@@ -41,7 +41,7 @@ export const routes: Routes = [
         }]
     },
     {
-        canActivate: [AuthGuard],
+        canActivate: [AdminGuard],
         path: "editFilm/:id",
         component: EditFilmComponent,       
         
@@ -57,7 +57,7 @@ export const routes: Routes = [
         }]
     },
     {
-        canActivate: [AuthGuard],
+        canActivate: [AdminGuard],
         path: "editSerie/:id",
         component: EditSerieComponent,        
         

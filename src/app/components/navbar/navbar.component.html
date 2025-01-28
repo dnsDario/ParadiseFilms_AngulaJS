@@ -5,25 +5,28 @@
     <ul class="nav_ul"> 
         @if(hayToken && soyAdmin){
             @if (!opcionesAdmin){
-                <button class="nav_ul_li" (click)="adminOptions()"><i class="fa-solid fa-user-tie"></i>Admin</button>
+                <li class="nav_ul_li">
+                    <a class="nav_ul_li_a" (click)="adminOptions()"><i class="fa-solid fa-user-tie"></i>Admin</a>
+                </li>
             } @else{
                 <ul class="nav_ul_admin">
-                    <li class="nav_ul_admin_li"><a routerLink="/adminFilms" (click)="adminOptions()"><i class="fa-solid fa-screwdriver-wrench"></i>Adm.Películas</a></li>
-                    <li class="nav_ul_admin_li"><a routerLink="/adminSeries" (click)="adminOptions()"><i class="fa-solid fa-screwdriver-wrench"></i>Adm.Series</a></li>
-                    <li class="nav_ul_admin_li"><a  routerLink="/adminUsers" (click)="adminOptions()"><i class="fa-solid fa-screwdriver-wrench"></i>Adm.Usuarios</a></li>
+                    <li class="nav_ul_admin_li"><a routerLink="/adminFilms" (click)="adminOptions()">Crear Película</a></li>
+                    <li class="nav_ul_admin_li"><a routerLink="/adminSeries" (click)="adminOptions()">Crear Serie</a></li>
+                    <li class="nav_ul_admin_li"><a  routerLink="/adminUsers" (click)="adminOptions()">Usuarios</a></li>
                 </ul>
             }           
         }   
         
-        @if(hayToken){            
-            <li class="nav_ul_li">
-                <a class="nav_ul_li_a" routerLink="/films" (click)="adminOptionsFalse()"><i class="fa-solid fa-film"></i>Películas</a>
-            </li>
-            <li class="nav_ul_li">
-                <a class="nav_ul_li_a" routerLink="/series" (click)="adminOptionsFalse()"><i class="fa-solid fa-tv"></i>Series</a>
-            </li>
-            <button class="nav_ul_li_button" type = "button" (click) = "doLogout()" routerLink="/"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
-            
+        @if(hayToken){ 
+            @if(!opcionesAdmin){
+                <li class="nav_ul_li">
+                    <a class="nav_ul_li_a" routerLink="/films" (click)="adminOptionsFalse()"><i class="fa-solid fa-film"></i>Películas</a>
+                </li>
+                <li class="nav_ul_li">
+                    <a class="nav_ul_li_a" routerLink="/series" (click)="adminOptionsFalse()"><i class="fa-solid fa-tv"></i>Series</a>
+                </li>
+                <button class="nav_ul_li_button" type = "button" (click) = "doLogout()" routerLink="/"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+            }           
         } @else {
             <li class="nav_ul_li">
                 <a class="nav_ul_li_a" routerLink="/">Home</a>

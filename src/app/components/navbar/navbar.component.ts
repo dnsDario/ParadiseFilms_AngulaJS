@@ -55,7 +55,7 @@ export class NavbarComponent implements OnInit{
     }
     
   }
-  
+
   doLogout() {
     this.userService.logout()   
   }
@@ -64,6 +64,7 @@ export class NavbarComponent implements OnInit{
     this.opcionesAdmin = !this.opcionesAdmin;
     console.log(this.opcionesAdmin)
   }
+  
   adminOptionsFalse(){
     this.opcionesAdmin = false;
   }

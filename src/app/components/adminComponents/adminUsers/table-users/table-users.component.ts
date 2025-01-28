@@ -27,8 +27,7 @@ export class TableUsersComponent implements OnInit{
   ngOnInit(): void {
     this.userService.findAllUsers().subscribe({
       next:(res:any) =>{
-        this.users = res as User[],
-        console.log('aqui films',this.users)
+        this.users = res as User[]
       },
       error:(err:any) => console.log('error al cargar las peliculas')
     })

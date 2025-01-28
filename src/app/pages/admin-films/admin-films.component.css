@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     padding-top:20px;
+    padding-bottom: 80px;
     width: 100%;
     height: auto;
     background-color: rgb(0, 0, 0);
@@ -38,41 +39,11 @@
 
 .admin{
     display: flex;
-    flex-direction: row wrap;
-    justify-content: space-between;
-    width: 80%;
+    justify-content: center;
+    width: 90%;
     height: auto;
     padding-top: 20px;
     background-color: black;
+    margin-bottom: 100px;
 }
 
-.listaBuscadorFilms{
-    width: 90%;
-    min-width: 350px;
-    height: 1000px;
-    overflow-y: auto;
-    scrollbar-width: none;
-}
-
-.crearBorrar{
-    margin: 20px 0px;
-    width: 90%;
-    min-width: 350px;
-    height: auto;
-    overflow-y: auto;
-    scrollbar-width: none;
-}
-
-@media screen and (max-width: 1124px) {
-    .admin {
-        flex-direction: column;
-        align-items: center;
-        width: 90%;
-    }
-    .listaBuscadorFilms {
-        width: 100%;
-    }
-    .crearBorrar{
-        width: 100%;
-    }
-}

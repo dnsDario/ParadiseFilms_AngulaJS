@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, 
 import { Router, RouterModule } from '@angular/router';
 import { Serie } from '../../interfaces/serie';
 import { SerieService } from '../../services/serie.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-series',
@@ -15,6 +16,7 @@ export class SeriesComponent {
   series: Serie[] = []
   seriesFiltered: Serie[] = []
   seriesDeleted: Serie[] = []
+  isAdmin: string = this.cookie.get('role')
 
   searcherSerie: FormGroup = this.FormBuilder.group({
     serie: new FormControl(null, [Validators.required]),
@@ -23,7 +25,8 @@ export class SeriesComponent {
   constructor(
     private serieService: SerieService,
     private FormBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private cookie: CookieService
   ){}
 
     ngOnInit(): void {

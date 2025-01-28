@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 
 import { Component, OnInit } from '@angular/core';
 import { Film } from '../../interfaces/film';
@@ -17,6 +18,7 @@ export class FilmsComponent implements OnInit{
   films: Film[] = []
   filmsFiltered: Film[] = []
   filmDeleted: Film[] = []
+  isAdmin: string = this.cookie.get('role')
 
   searcherFilm: FormGroup = this.formBuilder.group({
     film: new FormControl(null, [Validators.required]),
@@ -25,7 +27,8 @@ export class FilmsComponent implements OnInit{
   constructor(
     private filmService: FilmService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private cookie: CookieService
   ){}
 
   ngOnInit(): void {

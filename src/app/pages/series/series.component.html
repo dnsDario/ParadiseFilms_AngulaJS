@@ -11,13 +11,19 @@
     <ul class="contenedor_films">
         @if(series.length > 0){
             @for(serie of (seriesFiltered.length > 0? seriesFiltered : series); track serie._id){
-                <a [routerLink]="'/series/'+serie._id" (click)="scrollToTop()">
-                    <li class="contenedor_films_film">
-                        <img class="contenedor_films_film_img" src="{{serie.img}}" alt="img{{serie._id}}">
-                        <h4 class="contenedor_films_film_img_h4"> {{serie.title}} </h4>
-                        <h4 class="contenedor_films_film_img_h4"> {{serie.year}} </h4>
-                    </li>
-                </a>                
+                <div class="contenedor_films_card">
+                    <a [routerLink]="'/series/'+serie._id" (click)="scrollToTop()">
+                        <li class="contenedor_films_film">
+                            <img class="contenedor_films_film_img" src="{{serie.img}}" alt="img{{serie._id}}">
+                            <h4 class="contenedor_films_film_img_h4"> {{serie.title}} </h4>
+                            <h4 class="contenedor_films_film_img_h4"> {{serie.year}} </h4>
+                        </li>
+                    </a>
+                    <div class="contenedor_films_divLinks" >
+                        <a class="contenedor_films_divLinks_edit" [routerLink]="'/editSerie/'+serie._id">Editar</a>
+                        <a class="contenedor_films_divLinks_delete" [routerLink]="'/series/'" (click)="deleteSerie(serie._id)">Borrar</a>
+                    </div> 
+                </div>                
             }
         } @else {}
         

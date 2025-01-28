@@ -13,6 +13,8 @@ import { AdminGuard } from './guards/admin.guard';
 import { SeriesComponent } from './pages/series/series.component';
 import { SerieComponent } from './pages/series/serie/serie.component';
 import { AdminSeriesComponent } from './pages/admin-series/admin-series.component';
+import { EditFilmComponent } from './pages/edit-film/edit-film.component';
+import { EditSerieComponent } from './pages/edit-serie/edit-serie.component';
 
 export const routes: Routes = [
     {
@@ -40,6 +42,12 @@ export const routes: Routes = [
     },
     {
         canActivate: [AuthGuard],
+        path: "editFilm/:id",
+        component: EditFilmComponent,       
+        
+    },
+    {
+        canActivate: [AuthGuard],
         path: "series",
         component: SeriesComponent,        
         children: [{      
@@ -47,6 +55,12 @@ export const routes: Routes = [
             component: SerieComponent,
             path: ":id",
         }]
+    },
+    {
+        canActivate: [AuthGuard],
+        path: "editSerie/:id",
+        component: EditSerieComponent,        
+        
     },
     {
         canActivate: [AdminGuard],

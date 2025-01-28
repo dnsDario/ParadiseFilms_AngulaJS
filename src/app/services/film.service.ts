@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class FilmService {
-  URL_API: string = "https://paradise-films-backend.vercel.app"/*  || 'http://localhost:3000' */;
+  URL_API: string = /* "https://paradise-films-backend.vercel.app" */ 'http://localhost:3000';
 
   constructor(
     private http: HttpClient,
@@ -31,5 +31,9 @@ export class FilmService {
 
   deleteOne(id: string){
     return this.http.delete(`${this.URL_API}/api/films/${id}?token=${this.cookies.get('token')}`)
+  }
+
+  update(id: string, data: FilmCreateData){
+    return this.http.put(`${this.URL_API}/api/films/${id}?token=${this.cookies.get('token')}`, data)
   }
 }

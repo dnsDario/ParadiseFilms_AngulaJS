@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class UserService {
-  URL_API: string = 'https://paradise-films-backend.vercel.app' /* || 'http://localhost:3000' */;
+  URL_API: string = /* 'https://paradise-films-backend.vercel.app' */ 'http://localhost:3000';
 
   private roleSubject: Subject<string> = new Subject<string>();
   private tokenSubject: Subject<string> = new Subject<string>();
@@ -59,4 +59,8 @@ export class UserService {
       `${this.URL_API}/api/users/${id}?token=${this.cookies.get('token')}`
     );
   }
+
+  /* update(id: string, data: UserRegisterData){
+      return this.http.put(`${this.URL_API}/api/users/${id}?token=${this.cookies.get('token')}`, data)
+    } */
 }

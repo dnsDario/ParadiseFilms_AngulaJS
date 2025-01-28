@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Serie } from '../../interfaces/serie';
 import { SerieService } from '../../services/serie.service';
 
@@ -14,6 +14,7 @@ import { SerieService } from '../../services/serie.service';
 export class SeriesComponent {
   series: Serie[] = []
   seriesFiltered: Serie[] = []
+  seriesDeleted: Serie[] = []
 
   searcherSerie: FormGroup = this.FormBuilder.group({
     serie: new FormControl(null, [Validators.required]),
@@ -21,7 +22,9 @@ export class SeriesComponent {
 
   constructor(
     private serieService: SerieService,
-    private FormBuilder: FormBuilder){}
+    private FormBuilder: FormBuilder,
+    private router: Router
+  ){}
 
     ngOnInit(): void {
       this.serieService.findAll().subscribe({
@@ -33,6 +36,16 @@ export class SeriesComponent {
     searchSerie(){
       const nombreFiltro = this.searcherSerie.get('serie')?.value;
       this.seriesFiltered = this.series.filter((i)=> i.title.toLowerCase().includes(nombreFiltro.toLowerCase()))
+    }
+
+    deleteSerie(id: string){
+      this.serieService.deleteOne(id).subscribe({
+        next: (res: any) => {
+          alert('La siguiente pelicula fue eliminada: '+ res.serieDeleted.title),
+          this.router.navigate(['/series']);
+        },
+        error: (err) => console.log('error al borrar la película'),
+      });
     }
 
     scrollToTop(){

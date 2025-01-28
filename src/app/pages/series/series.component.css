@@ -83,6 +83,11 @@
     top: -0.1px;
     padding-bottom: 250px;
 }
+.contenedor_films_card{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
 .contenedor_films_film{
     display: flex;
     flex-direction: column;
@@ -104,6 +109,36 @@
 }
 .contenedor_films_film_img_h4{
     margin: 5px 15px;
+}
+.contenedor_films_divLinks{
+    display: flex;
+    flex-direction: row;
+    width: 100;
+    justify-content: space-evenly;
+}
+.contenedor_films_divLinks_edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color:green;
+    color: white;
+    border-radius: 2px;
+}
+.contenedor_films_divLinks_edit:hover{
+    scale: 1.05;
+}
+.contenedor_films_divLinks_delete{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border-radius: 2px;
+}
+.contenedor_films_divLinks_delete:hover{
+    scale: 1.05;
 }
 
 

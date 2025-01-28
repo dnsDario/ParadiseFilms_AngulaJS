@@ -7,7 +7,7 @@ import { SerieCreateData } from '../interfaces/dto/serie-create-data';
   providedIn: 'root'
 })
 export class SerieService {
-  URL_API: string = "https://paradise-films-backend.vercel.app"/*  || 'http://localhost:3000' */;
+  URL_API: string = /* "https://paradise-films-backend.vercel.app" */  'http://localhost:3000';
 
   constructor(
     private http: HttpClient,
@@ -31,4 +31,8 @@ export class SerieService {
   deleteOne(id: string){
     return this.http.delete(`${this.URL_API}/api/series/${id}?token=${this.cookies.get('token')}`)
   }
+
+  update(id: string, data: SerieCreateData){
+      return this.http.put(`${this.URL_API}/api/series/${id}?token=${this.cookies.get('token')}`, data)
+    }
 }

@@ -23,10 +23,9 @@ export class FormDeleteUserComponent {
     const id: string = this.deleterUser.get('id')?.value
     this.userService.deleteUser(id).subscribe({
       next: (res:any) => {
-        alert('El siguiente usuario fue eliminado: '+ res.userDeleted.name),
-        console.log(res)
+        alert('El siguiente usuario fue eliminado: '+ res.usuarioBorrado.name)
       },
-      error: (err) => console.log('error al borrar el usuario'),
+      error: (res:any) => console.log(res.error.msg, res),
     });
   }  
 }

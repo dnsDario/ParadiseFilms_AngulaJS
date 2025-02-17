@@ -22,7 +22,6 @@ export class LoginFormComponent {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private cookies: CookieService,
     private router: Router
   ) {}
 

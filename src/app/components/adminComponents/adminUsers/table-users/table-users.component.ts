@@ -29,7 +29,7 @@ export class TableUsersComponent implements OnInit{
       next:(res:any) =>{
         this.users = res as User[]
       },
-      error:(err:any) => console.log('error al cargar las peliculas')
+      error:(err:any) => console.log('error al cargar los usuarios')
     })
   }
 

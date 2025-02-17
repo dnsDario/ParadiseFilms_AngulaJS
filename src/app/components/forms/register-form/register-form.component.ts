@@ -18,7 +18,7 @@ export class RegisterFormComponent {
   registerForm: FormGroup = this.formBuilder.group({
     name: new FormControl(null, [Validators.required]),
     email: new FormControl(null, [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')]),
-    password: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z0-9]+[a-zA-Z0-9]{7,}$')]),
+    password: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z0-9]+[a-zA-Z0-9]{4,}$')]),
     repetirPassword: new FormControl(null, [Validators.required])
   });
 
@@ -38,8 +38,7 @@ export class RegisterFormComponent {
       this.userService.register(data).subscribe({
         next: (res: any) => {
           alert('Enhorabuena, se ha registrado con exito'),
-          this.router.navigate(['/login']);
-          console.log(res)},
+          this.router.navigate(['/login'])},
         error: (err) => console.log(err)
       });
     }

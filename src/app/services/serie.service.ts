@@ -7,7 +7,7 @@ import { SerieCreateData } from '../interfaces/dto/serie-create-data';
   providedIn: 'root'
 })
 export class SerieService {
-  URL_API: string = "https://paradise-films-backend.vercel.app";
+  URL_API: string = "https://paradise-films-backend.vercel.app" /* 'http://localhost:3000' */;
 
   constructor(
     private http: HttpClient,

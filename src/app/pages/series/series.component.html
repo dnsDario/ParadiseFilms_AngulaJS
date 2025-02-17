@@ -19,7 +19,7 @@
                             <h4 class="contenedor_films_film_img_h4"> {{serie.year}} </h4>
                         </li>
                     </a>
-                    @if(isAdmin === 'admin'){
+                    @if(isAdmin === 'admin' || isAdmin === 'adminPro'){
                     <div class="contenedor_films_divLinks" >
                         <a class="contenedor_films_divLinks_edit" [routerLink]="'/editSerie/'+serie._id">Editar</a>
                         <a class="contenedor_films_divLinks_delete" [routerLink]="'/series/'" (click)="deleteSerie(serie._id)">Borrar</a>

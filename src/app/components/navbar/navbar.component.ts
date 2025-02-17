@@ -28,10 +28,10 @@ export class NavbarComponent implements OnInit{
 
   ngOnInit(): void {
     this.cookie.get('token')? this.hayToken = true: this.hayToken = false
-    this.cookie.get('role') === 'admin'? this.soyAdmin = true : this.soyAdmin = false       
+    this.cookie.get('role') === 'admin' || 'adminPro'? this.soyAdmin = true : this.soyAdmin = false       
 
     this.userService.getRoleObservable().subscribe(role => {
-      this.soyAdmin = role === 'admin';
+      this.soyAdmin = role === 'admin' || role === 'adminPro';
     });
     this.userService.getTokenObservable().subscribe(token => {
       token? this.hayToken = true: this.hayToken = false;
@@ -47,7 +47,7 @@ export class NavbarComponent implements OnInit{
 
   private checkScreenSize(): void {
     if (typeof window !== 'undefined') {
-      if(window.innerWidth <= 1023){
+      if(window.innerWidth <= 1123){
         this.esMovil = true;
       } else {
         this.esMovil = false
@@ -62,7 +62,6 @@ export class NavbarComponent implements OnInit{
 
   adminOptions(){
     this.opcionesAdmin = !this.opcionesAdmin;
-    console.log(this.opcionesAdmin)
   }
   
   adminOptionsFalse(){
